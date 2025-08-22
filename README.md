@@ -1,46 +1,108 @@
-# Underdogs Platform
+# Underdogs Platform 🏰
 
-Full-stack application with React frontend and FastAPI backend.
+A full-stack medieval castle portal application with React frontend and FastAPI backend.
 
-## Backend
-- FastAPI with SQLAlchemy
-- JWT Authentication
-- SQLite Database
+## 🌟 Features
 
-## Frontend  
-- React with TypeScript
-- Tailwind CSS
-- Medieval Castle Gate Portal
+- **Medieval Castle Gate Portal** - Interactive castle door with authentication
+- **JWT Authentication** - Secure user registration and login
+- **Real-time Dashboard** - Task management and team collaboration
+- **Responsive Design** - Works on all devices
 
-## Deployment
+## 🚀 Live Demo
 
-### Backend (Railway/Render)
-```bash
-cd backend
-pip install -r requirements.txt
-uvicorn main:app --host 0.0.0.0 --port $PORT
-```
+- **Frontend**: https://famous-moonbeam-1630fd.netlify.app
+- **Backend**: (Deploy in progress...)
 
-### Frontend (Vercel)
-```bash
-cd frontend
-npm install
-npm run build
-```
+## 🛠️ Tech Stack
 
-## Local Development
+### Frontend
+- React 19 with TypeScript
+- Tailwind CSS for styling
+- Axios for API calls
+- React Router for navigation
+
+### Backend
+- FastAPI with Python
+- SQLAlchemy ORM
+- JWT authentication
+- SQLite database
+
+## 📦 Local Development
 
 ### Backend
 ```bash
 cd backend
-python -m uvicorn main:app --reload --port 8000
+pip install -r requirements.txt
+python main.py
 ```
+Server runs on: http://localhost:8000
 
 ### Frontend
 ```bash
 cd frontend
+npm install
 npm start
 ```
+App runs on: http://localhost:3000
+
+## 🌐 Deployment
+
+### Backend (Railway)
+1. Connect this repo to Railway
+2. Select `backend` folder
+3. Auto-deploys on push
+
+### Frontend (Netlify)
+1. Build: `npm run build`
+2. Deploy `build/` folder to Netlify
+3. Set environment variables
+
+## 🎨 Portal Features
+
+- Medieval castle gate design
+- "Speak friend and enter" title
+- Password hint: "mellon" displayed on ground
+- Smooth animations and effects
+- Dark theme with red accents
+
+## 📁 Project Structure
+
+```
+underdogsx/
+├── backend/           # FastAPI backend
+│   ├── main.py       # Main application
+│   ├── models.py     # Database models
+│   └── requirements.txt
+├── frontend/         # React frontend
+│   ├── src/
+│   │   ├── components/
+│   │   ├── contexts/
+│   │   └── services/
+│   └── public/
+└── README.md
+```
+
+## 🔐 Environment Variables
+
+### Backend (.env)
+```
+SECRET_KEY=your-secret-key
+DATABASE_URL=sqlite:///./underdogs.db
+```
+
+### Frontend (.env)
+```
+REACT_APP_API_URL=your-backend-url
+```
+
+## 📝 License
+
+MIT License - Feel free to use this project!
+
+---
+
+Made with ❤️ for the Underdogs platform
 
 A dark-themed internal web application for coordinating teams of developers, designers, and project collaborators. Built with a cyberpunk aesthetic inspired by brutalism and Greek mythology.
 
