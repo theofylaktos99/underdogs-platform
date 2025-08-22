@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: underdogs-backend
+    env: python
+    buildCommand: cd backend && pip install -r requirements.txt
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: SECRET_KEY
+        value: super-secret-production-key-change-this-12345
+      - key: DATABASE_URL
+        value: sqlite:///./underdogs.db
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 30
