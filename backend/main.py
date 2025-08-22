@@ -317,8 +317,10 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
+        "https://famous-moonbeam-1630fd.netlify.app",
         "https://*.vercel.app", 
         "https://*.netlify.app",
+        "https://*.railway.app",
         "https://*.render.com"
     ],
     allow_credentials=True,
@@ -533,4 +535,6 @@ async def create_comment(
     return db_comment
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    import os
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
