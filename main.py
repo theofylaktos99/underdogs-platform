@@ -346,13 +346,18 @@ async def health_check():
 
 @app.post("/api/auth/register", response_model=Token)
 async def register(user: UserCreate, db: Session = Depends(get_db)):
+    print(f"🔍 Registration attempt for: {user.email}, username: {user.username}")
+    
     # Check if user already exists
     db_user = db.query(User).filter(User.email == user.email).first()
     if db_user:
+        print(f"❌ Email {user.email} already exists")
         raise HTTPException(status_code=400, detail="Email already registered")
     
     db_user = db.query(User).filter(User.username == user.username).first()
     if db_user:
+        print(f"❌ Username {user.username} already exists")
+        raise HTTPException(status_code=400, detail="Username already taken")
         raise HTTPException(status_code=400, detail="Username already taken")
     
     # Create new user
