@@ -12,7 +12,8 @@ A full-stack medieval castle portal application with React frontend and FastAPI 
 ## 🚀 Live Demo
 
 - **Frontend**: https://famous-moonbeam-1630fd.netlify.app
-- **Backend**: (Deploy in progress...)
+- **Backend**: https://underdogs-platform.onrender.com
+- **API Docs**: https://underdogs-platform.onrender.com/docs
 
 ## 🛠️ Tech Stack
 
