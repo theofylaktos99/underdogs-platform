@@ -329,6 +329,21 @@ app.add_middleware(
 )
 
 # Routes
+@app.get("/")
+async def root():
+    """Health check endpoint"""
+    return {
+        "message": "Underdogs Platform API", 
+        "status": "online",
+        "version": "1.0.0",
+        "docs": "/docs"
+    }
+
+@app.get("/health")
+async def health_check():
+    """Health check endpoint"""
+    return {"status": "healthy", "timestamp": datetime.now().isoformat()}
+
 @app.post("/api/auth/register", response_model=Token)
 async def register(user: UserCreate, db: Session = Depends(get_db)):
     # Check if user already exists
